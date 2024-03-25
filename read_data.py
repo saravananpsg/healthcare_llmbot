@@ -1,18 +1,14 @@
-# import langchain
-# import os
+import dotenv
 import openai
+import pandas as pd
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.document_loaders import OnlinePDFLoader
 # from langchain_community.document_loaders import UnstructuredURLLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
-import pandas as pd
-import dotenv
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
+
 config = dotenv.dotenv_values(".env")
 openai.api_key = config['OPENAI_API_KEY']
 openai_api_key = config['OPENAI_API_KEY']
@@ -68,11 +64,9 @@ def get_vector_store():
 
 
 if __name__ == "__main__":
-    # data_dict = get_data()
     vector_store = get_vector_store()
 
-# relevant_docs = knowledge_base.similarity_search("what is gestation diabetes ?")
-# print(relevant_docs[0].page_content)
+
 
 
 

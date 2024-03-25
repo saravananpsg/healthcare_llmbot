@@ -1,8 +1,9 @@
 import os
 import requests
-
+import json
 # Importing required functionalities
 from PyPDF2 import PdfReader
+
 
 infile_path = "urls_list.txt"
 with open(infile_path, 'r') as infile:
@@ -24,3 +25,9 @@ def extract_pdf_text(file_path):
     for pg in pdf_file.pages:
         text_data += pg.extract_text()
     return text_data
+
+def write_json(filename, json_data):
+    with open(filename, 'w') as json_file:
+        json.dump(json_data, json_file)
+
+

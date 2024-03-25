@@ -1,17 +1,18 @@
 from langchain.llms import OpenAI
-import os
+import openai
 from langchain.evaluation.qa import QAEvalChain
 from langchain.chains import RetrievalQA
 from read_data import get_vector_store
 import dotenv
-
+import uuid
+import os
+from utils import write_json
 
 config = dotenv.dotenv_values(".env")
 openai.api_key = config['OPENAI_API_KEY']
 openai_api_key = config['OPENAI_API_KEY']
 
 vector_store, df = get_vector_store()
-
 
 
 ground_truth_question_answers = [
@@ -31,16 +32,16 @@ ground_truth_question_answers = [
 
 if __name__ == "__main__":
 
-    llm = OpenAI(temperature=1, openai_api_key=openai_api_key)
-    qa = RetrievalQA.from_chain_type(llm=llm,
-                                     chain_type="stuff",
-                                     retriever=vector_store.as_retriever())
+    llm = OpenAI(temperature=0.1, openai_api_key=openai_api_key)
     chain = RetrievalQA.from_chain_type(llm=llm,
                                         chain_type="stuff",
                                         retriever=vector_store.as_retriever(),
                                         input_key="question")
     predictions = chain.apply(ground_truth_question_answers)
-    print(predictions)
+    api_filename = "retrieval_qa_" + str(uuid.uuid4())
+    api_resp_file = os.path.join("results", api_filename)
+    write_json(api_resp_file, predictions)
+
     # Start your eval chain
     eval_chain = QAEvalChain.from_llm(llm)
     eval_outputs = eval_chain.evaluate(ground_truth_question_answers,
