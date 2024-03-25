@@ -1,6 +1,11 @@
-# LLM Healthcare chatbot using Retreiver model GPT3.5 w/ chaining:
+# LLM Healthcare chatbot using Openai GPT3.5 retriever model w/ chaining:
 
+## Project objective: 
 This repository is to create a conversational chatbot that can address readers’ concerns in natural language using information from the trusted articles and in the  healthcare context.
+
+## Proposed idea:
+* Using Langchain and Openai model to retrieve top-k candidates from the online sources and pass it to Openai model to find the answer for the query
+
 
 ## Getting Started
 
