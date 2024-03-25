@@ -9,11 +9,13 @@ import os  # for getting API token from env variable OPENAI_API_KEY
 from scipy import spatial  # for calculating vector similarities for search
 # from langchain.models import OpenAIModel
 from read_data import get_vector_store
+import dotenv
 
+
+config = dotenv.dotenv_values(".env")
+openai.api_key = config['OPENAI_API_KEY']
 
 data_exist=True
-os.environ["OPENAI_API_KEY"] = "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"
-openai.api_key = os.environ["OPENAI_API_KEY"]
 # models
 EMBEDDING_MODEL = "text-embedding-ada-002"
 GPT_MODEL = "gpt-3.5-turbo"

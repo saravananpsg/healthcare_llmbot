@@ -8,16 +8,14 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 import pandas as pd
-
+import dotenv
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
-
-# openai_api_key=os.getenv('OPENAI_API_KEY', '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')
-os.environ["OPENAI_API_KEY"] = "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"
-openai.api_key = os.environ["OPENAI_API_KEY"]
-openai_api_key = os.environ["OPENAI_API_KEY"]
+config = dotenv.dotenv_values(".env")
+openai.api_key = config['OPENAI_API_KEY']
+openai_api_key = config['OPENAI_API_KEY']
 
 def get_data():
     infile_path='urls_list.txt'

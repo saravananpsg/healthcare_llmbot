@@ -3,11 +3,16 @@ import os
 from langchain.evaluation.qa import QAEvalChain
 from langchain.chains import RetrievalQA
 from read_data import get_vector_store
+import dotenv
+
+
+config = dotenv.dotenv_values(".env")
+openai.api_key = config['OPENAI_API_KEY']
+openai_api_key = config['OPENAI_API_KEY']
 
 vector_store, df = get_vector_store()
 
-os.environ["OPENAI_API_KEY"] = "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"
-openai_api_key = os.environ["OPENAI_API_KEY"]
+
 
 ground_truth_question_answers = [
     {'question': "What is gestational diabetes and how is it diagnosed?",
