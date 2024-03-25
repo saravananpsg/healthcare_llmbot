@@ -33,20 +33,19 @@ This repository is to create a conversational chatbot that can address readersâ€
     * 2. Setting the number of top-k retrieved documents in the range 3 to 5
 * Using LLM evaluation metrics:
     * Evaluating LLM response 
-           - using Langchain
-           - using self-consistency metrics
-                - 1. SelfCheck-MQAG 
-                - 2. SelfCheck-BERTScore
-                - 3. SelfCheck-Ngram
-                - 4. SelfCheck-NLI based
-                - 5. SelfCheck-Opensource model
-                - 6. SelfCheck-openai - since i have used openai for generation, I tried to evaluaate the self-consistency with other methods
+           * using Langchain
+           * using self-consistency metrics
+                *  SelfCheck-MQAG 
+                *  SelfCheck-BERTScore
+                *  SelfCheck-Ngram
+                *  SelfCheck-NLI based
+                *  SelfCheck-Opensource model
+                *  SelfCheck-openai - since i have used openai for generation, I tried to evaluaate the self-consistency with other methods
 ### (Optional Challenge)  Assess the performance of the answers generated from the chatbot, given that there are no ground truth Q&A pairs provided to you.  
 * For this, I have tried to use Lngchain, QAEvalChain to evaluate the LLM Response. 
 
-(1) Manual Annotation for 3 sample queries: For the provided sample queries, I have annotated the sample responses from the extracted docs as ground truth. QAEvalChain can asseses the predicted answers against the annotated responses and returns whether the predicted answer is valid or not.
-
-(2) Assesing Openai model(LLM1) generated response as ground truth and validate the response against the LLM2(RetrievalQA with chaining) response as prediction.  QAEvalChain can asseses the predicted answers(LLM2) against the responses(from LLM1) and returns whether the predicted answer is valid or not.
+  * Manual Annotation for 3 sample queries: For the provided sample queries, I have annotated the sample responses from the extracted docs as ground truth. QAEvalChain can asseses the predicted answers against the annotated responses and returns whether the predicted answer is valid or not.
+  * Assesing Openai model(LLM1) generated response as ground truth and validate the response against the LLM2(RetrievalQA with chaining) response as prediction.  QAEvalChain can asseses the predicted answers(LLM2) against the responses(from LLM1) and returns whether the predicted answer is valid or not.
 
 ## Getting Started
 
