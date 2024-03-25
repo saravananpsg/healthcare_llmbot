@@ -40,7 +40,7 @@ This repository is to create a conversational chatbot that can address readersâ€
         3.  SelfCheck-Ngram
         4.  SelfCheck-NLI based
         5.  SelfCheck-Opensource model
-        6.  SelfCheck-openai - since i have used openai for generation, I tried to evaluaate the self-consistency with other methods
+        6.  SelfCheck-openai - since i have used openai for generation, evaluated the responses with self-consistency checks of other methods
 ### (Optional Challenge)  Assess the performance of the answers generated from the chatbot, given that there are no ground truth Q&A pairs provided to you.  
 * For this, I have tried to use Lngchain, QAEvalChain to evaluate the LLM Response. 
 
