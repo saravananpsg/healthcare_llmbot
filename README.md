@@ -22,7 +22,9 @@ This repository is to create a conversational chatbot that can address readersâ€
   * Using the embeddings, rank the text sections by relevance to the query
 * Ask (once per query)
   * Insert the question and the most relevant sections into a message to GPT
-  * Return GPT's answer
+  * Return GPT's 
+  
+![alt text](img/new_image.png)
 
 ### 2 Strategy to mitigate LLM Hallucinations:
 
