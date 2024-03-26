@@ -1,4 +1,4 @@
-# LLM Healthcare chatbot using Openai GPT3.5 retriever model w/ chaining:
+# Healthcare LLM Chatbot using RAG GPT3.5 retriever model w/ chaining:
 
 ## Project objective: 
 This repository is to create a conversational chatbot that can address readers’ concerns in natural language using information from the trusted articles and in the  healthcare context.
