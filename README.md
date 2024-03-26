@@ -23,7 +23,10 @@ This repository is to create a conversational chatbot that can address readersâ€
 * Ask (once per query)
   * Insert the question and the most relevant sections into a message to GPT
   * Return GPT's 
-  
+
+
+* Similiar architecture Pipeline for reference(from Pinecone). Instead of pinecone, FAISS was used for vector store
+
 ![alt text](img/new_image.png)
 
 ### 2 Strategy to mitigate LLM Hallucinations:
