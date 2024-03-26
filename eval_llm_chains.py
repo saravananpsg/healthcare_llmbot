@@ -1,4 +1,4 @@
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 import openai
 from langchain.evaluation.qa import QAEvalChain
 from langchain.chains import RetrievalQA

@@ -10,7 +10,6 @@ import dotenv
 import openai
 import argparse
 import ast  # for converting embeddings saved as strings back to arrays
-
 from langchain_community.chat_models.openai import ChatOpenAI
 from openai import OpenAI  # for calling the OpenAI API
 import pandas as pd  # for storing text and embeddings data
@@ -202,8 +201,8 @@ if __name__ == "__main__":
     else:
         knowledge_base, df = get_vector_store()
     # from gpt-3.5 with prompting and context - top-k related docs
-    # response = ask(query, df)
-    # print(response)
+    response = ask(query, df)
+    print(response)
 
 
 
