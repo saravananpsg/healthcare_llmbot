@@ -130,6 +130,7 @@ def ask(
             "relatednesses_score": relatednesses[i]
         })
     resp_dict = {
+        "user_query": query,
         "answer": response_message,
         "source_docs": source_list
     }
