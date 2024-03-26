@@ -1,14 +1,9 @@
 # Q&A Chatbot
-from langchain_community.llms import OpenAI
 import streamlit as st
-import os
-# from langchain_openai import ChatOpenAI
 from main import *
 
-
-## Function to load OpenAI model and get respones
+## load kb, embedding file from the vector store
 knowledge_base, df = get_vector_store()
-
 
 def get_openai_response(question, df):
     result = ask(question, df)
@@ -16,7 +11,6 @@ def get_openai_response(question, df):
     # response=llm(question)
     response = result["answer"]
     return response
-
 
 ##initialize our streamlit app
 st.set_page_config(page_title="Q&A Demo")

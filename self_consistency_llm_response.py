@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""self-consistency-LLM-Response.ipynb
+"""
+Created from saravananpsg/drive/self-consistency-LLM-Response.ipynb
 (Requires: GPU) evaluated in Google colab notebooks
 """
 # !pip install selfcheckgpt transformers spacy

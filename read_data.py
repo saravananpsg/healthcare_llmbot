@@ -5,7 +5,7 @@ from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.document_loaders import OnlinePDFLoader
 # from langchain_community.document_loaders import UnstructuredURLLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 
 
@@ -64,7 +64,7 @@ def get_vector_store():
 
 
 if __name__ == "__main__":
-    vector_store = get_vector_store()
+    vector_store, df = get_vector_store()
 
 
 
