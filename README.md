@@ -12,7 +12,7 @@ This repository is to create a conversational chatbot that can address readers�
 
 * Reading Documents: Data from Online PDF files and html files are extracted and loaded to Document loaders
 * Chunking:  After loading, data must be split into smaller chunks that can be fit into the LLM model for further processing
-  * RecursiveCharacterTextSplitter: Recommended splitter for generic text. It tries to split into blocks based on the following order *[“\n\n”, “\n”, “ “, “”]*
+  * RecursiveCharacterTextSplitter: Recommended splitter for generic text.
 * Create a Vector Database: 
   * Unstructured data is commonly stored by projecting it into an embedding vector space, which provides a real number to each encoded vector. 
   * All the chunks are converted to embedding vector and stored in vector db. 
